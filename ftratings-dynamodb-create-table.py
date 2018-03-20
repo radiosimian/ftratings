@@ -27,8 +27,8 @@ table = dynamodb.create_table(
 		}
 	],
 	ProvisionedThroughput={
-		'ReadCapacityUnits': '1',
-		'WriteCapacityUnits': '1'
+		'ReadCapacityUnits': 1,
+		'WriteCapacityUnits': 1
 	}
 )
 
@@ -36,6 +36,6 @@ table = dynamodb.create_table(
 table.meta.client.get_waiter('table_exists').wait(TableName='ftratings')
 
 # Check that table is created by querying its properties
-print(table.attribute_definitions)
-print(table.key_schema)
-print(table.item_count)
+print "Table Attribute Definitions: " + (table.attribute_definitions)
+print "Table Key Schema: " + (table.key_schema)
+print "Table Item Count: " + (table.item_count)
