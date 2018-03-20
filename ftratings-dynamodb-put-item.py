@@ -24,7 +24,7 @@ table.put_item(
 	}
 )
 
-# Access the table, forcing its attributes values to be loaded
+# Confirm access to correct table and assigned values
 print "Table Name and ARN: " + (table.table_name) + " | " + (table.table_arn)
 print "Timestamp: " + (timestamp)
 print "Simulated rating:",(rating)
