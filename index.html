@@ -11,18 +11,51 @@
 <body>
 <h1>Please rate our website</h1>
 
-<!-- html to create four custom radio buttons -->
-<!-- html to create Submit button
+<form>
+  <fieldset>
+    <legend>>---------- Happy or Not</legend>
+    <div>
+      <input type="radio" id="value4" 
+         name="rating" value="4" checked>
+      <label for="value4">Great</label>
+
+      <input type="radio" id="value3"  
+         name="rating" value="3">
+      <label for="value3">Good</label>
+
+      <input type="radio" id="value2" 
+         name="rating" value="2">
+      <label for="value2">Average</label>
+
+      <input type="radio" id="value1"  
+         name="rating" value="1">
+      <label for="value4">Poor</label>
+    </div>
+    <br>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </fieldset>
+</form>
+
+<pre id="log">
+</pre>
 
 <script>
+  var form = document.querySelector("form");
+  var log = document.querySelector("#log");
 
-<!-- 
-   javascript function to 
-   - iterate over radio buttons 
-   - trigger LAMBDA function on submit
- -->
+  form.addEventListener("submit", function(event) {
+    var data = new FormData(form);
+    var output = "";
+    for (const entry of data) {
+      output = entry[0] + "=" + entry[1] + "\r";
+  	};
+  log.innerText = output;
+  event.preventDefault();
+  }, false);
+</script>
 
- </script>
- </body>
- </html>
+</body>
+</html>
 
