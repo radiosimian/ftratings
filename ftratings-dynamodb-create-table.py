@@ -16,7 +16,7 @@ table = dynamodb.create_table(
 			'KeyType': 'RANGE'
 		}
 	],
-	AttributeDefinitions=[
+	AttributeDefinitions=
 		{
 			'AttributeName': 'timestamp',
 			'AttributeType': 'S'
